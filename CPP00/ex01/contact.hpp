@@ -6,35 +6,40 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:18:28 by hbutt             #+#    #+#             */
-/*   Updated: 2025/02/18 16:27:22 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/02/19 17:40:53 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string.h>
+#ifndef CONTACT_H
+#define CONTACT_H
 
-class Contact{
+#include <iostream>
+
+class Contact
+{
 
 private:
-    std::string firstname;
-    std::string lastname;
-    std::string nickname;
-    std::string phonenumber;
-    std::string secret;
+    std::string _firstname;
+    std::string _lastname;
+    std::string _nickname;
+    std::string _phonenumber;
+    std::string _secret;
 
 public:
-    Contact(void);
-    ~Contact(void);
+    Contact(void) {}
+    ~Contact(void) {}
 
-    void set_firstname(std::string firstname);
-    void set_lastname(std::string lastname);
-    void set_nickname(std::string nickname);
-    void set_phonenumber(std::string phonenumber);
-    void set_secret(std::string secret);
+    void setFirstname(std::string firstname);
+    void setLastname(std::string lastname);
+    void setNickname(std::string nickname);
+    void setPhonenumber(std::string phonenumber);
+    void setSecret(std::string secret);
 
-    std::string get_firstname() const;
-    std::string get_lastname() const;
-    std::string get_nickname() const;
-    std::string get_phonenumber() const;
-    std::string get_secret() const;
+    std::string getFirstname() const;
+    std::string getLastname() const;
+    std::string getNickname() const;
+    std::string getPhonenumber() const;
+    std::string getSecret() const;
 };
+
+#endif

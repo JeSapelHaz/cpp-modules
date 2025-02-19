@@ -6,7 +6,30 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:18:36 by hbutt             #+#    #+#             */
-/*   Updated: 2025/02/18 15:26:36 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/02/19 17:56:32 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
+
+#include <iostream>
+#include "contact.hpp"
+
+class Phonebook
+{
+
+private:
+    
+    int     _nbrContacts;
+
+public:
+    Contact _contacts[8];
+    Phonebook() : _nbrContacts(0) {}
+    // ~Phonebook();
+    int getNbrContacts(void);
+    void addContact(void);
+    void getContact(void);
+};
+
+#endif

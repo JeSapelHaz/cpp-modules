@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:58 by hbutt             #+#    #+#              #
-#    Updated: 2025/02/18 15:08:41 by hbutt            ###   ########.fr        #
+#    Updated: 2025/02/19 17:38:11 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= phonebook.cpp
+SRCS				= main.cpp \
+						contact.cpp \
+						phonebook.cpp 
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)
