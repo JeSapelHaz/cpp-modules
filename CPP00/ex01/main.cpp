@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:23:26 by hbutt             #+#    #+#             */
-/*   Updated: 2025/02/19 18:00:56 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/02/19 18:08:59 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ int main(void)
         if (line.compare("ADD") == 0)
         {
             phonebook.addContact();
-            std::cout << std::setw(10) << "First name du contact :";
-            std::cout << phonebook.getNbrContacts();
-            std::cout << phonebook._contacts[phonebook.getNbrContacts()-1].getFirstname() << std:: endl;
+            // std::cout << std::setw(10) << "First name du contact :";
+            // std::cout << phonebook._contacts[phonebook.getNbrContacts()-1].getFirstname() << std:: endl;
             continue;
         }
         else if (line.compare("SEARCH") == 0)

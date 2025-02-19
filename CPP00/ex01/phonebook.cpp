@@ -6,16 +6,15 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:08:52 by hbutt             #+#    #+#             */
-/*   Updated: 2025/02/19 17:58:51 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/02/19 18:23:23 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include <iomanip>
 
 void Phonebook::addContact(void)
 {
-    // Contact newContact;
-    // this->_contacts[_nbrContacts] = newContact;
     std::string array[5];
     std::cout << "Please enter a first name:" << std::endl;
     std::getline(std::cin, array[0]);
@@ -36,7 +35,15 @@ void Phonebook::addContact(void)
 }
 void Phonebook::getContact(void)
 {
-    ;
+    int i = 0;
+    std::cout << "| INDEX    |FIRST NAME|LAST NAME | NICKNAME|" << std::endl;
+    while(i < this->_nbrContacts && i < 8)
+    {
+        std::cout << "|";
+        std::cout << std::left << std::setw(10) << i;
+        std::cout << "|" << std::endl;
+        i++;
+    }
 }
 
 int Phonebook::getNbrContacts(void)
