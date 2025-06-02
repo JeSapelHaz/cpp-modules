@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:58 by hbutt             #+#    #+#              #
-#    Updated: 2025/02/19 17:38:11 by hbutt            ###   ########.fr        #
+#    Updated: 2025/06/02 17:23:49 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME				= phonebook
 
 # Compiler and CFlags
-CC                  = g++
+CC                  = c++
 CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 

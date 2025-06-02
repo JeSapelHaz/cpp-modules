@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:23:26 by hbutt             #+#    #+#             */
-/*   Updated: 2025/02/19 18:08:59 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/02 18:43:56 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "phonebook.hpp"
 #include <iostream>
 #include <iomanip>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -23,13 +24,16 @@ int main(void)
     
     while(1)
     {
+        std::cout << "=========================================" << std::endl;
         std::cout << "ADD, SEARCH OR EXIT" << std::endl;
-        std::getline(std::cin, line);
+        if (!std::getline(std::cin, line)) 
+        {   
+            std::cout << "EOF detected. Exit program." << std::endl;
+            exit(0);
+        }
         if (line.compare("ADD") == 0)
         {
             phonebook.addContact();
-            // std::cout << std::setw(10) << "First name du contact :";
-            // std::cout << phonebook._contacts[phonebook.getNbrContacts()-1].getFirstname() << std:: endl;
             continue;
         }
         else if (line.compare("SEARCH") == 0)
@@ -38,13 +42,9 @@ int main(void)
             continue;
         }
         else if (line.compare("EXIT") == 0)
-        {
             return 0;
-        }
         else 
-        {
             std::cout << "INVALID COMMAND" << std::endl;
-        }
-        
+
     }
 }
