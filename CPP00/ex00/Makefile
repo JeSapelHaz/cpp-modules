@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 16:14:59 by hbutt             #+#    #+#              #
-#    Updated: 2025/06/02 17:23:44 by hbutt            ###   ########.fr        #
+#    Updated: 2025/06/02 21:01:24 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,19 +32,19 @@ all:	$(NAME)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) 
-	@echo "\033[1;36mCompiling...\033[0m"
+	@echo -e "\033[1;36mCompiling...\033[0m"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "\033[1;32mDone.\033[0m"
+	@echo -e "\033[1;32mDone.\033[0m"
 
 clean:
-	@echo "\033[1;35mRemoving obj/...\033[0m"
+	@echo -e "\033[1;35mRemoving obj/...\033[0m"
 	@$(RM) -r $(OBJ)
-	@echo "\033[1;32mAll Done for clean.\033[0m"
+	@echo -e "\033[1;32mAll Done for clean.\033[0m"
 
 fclean: clean
-	@echo "\033[1;35mRemoving exec...\033[0m"
+	@echo -e "\033[1;35mRemoving exec...\033[0m"
 	@$(RM) $(NAME)
-	@echo "\033[1;32mDone.\033[0m"
+	@echo -e "\033[1;32mDone.\033[0m"
 
 re: fclean obj all
 
