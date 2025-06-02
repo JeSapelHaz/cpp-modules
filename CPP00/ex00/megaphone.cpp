@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:15:06 by hbutt             #+#    #+#             */
-/*   Updated: 2025/02/05 15:06:47 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/02 19:10:39 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void ft_upper(char *str)
     while (str[i])
     {
         if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] = str[i] - 32;
+            str[i] = toupper(str[i]);
         i++;
     }
     std::cout << str;
