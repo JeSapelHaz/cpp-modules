@@ -6,12 +6,12 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:23:26 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/02 18:43:56 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/03 15:30:59 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
-#include "phonebook.hpp"
+#include "Contact.hpp"
+#include "Phonebook.hpp"
 #include <iostream>
 #include <iomanip>
 #include <stdlib.h>
