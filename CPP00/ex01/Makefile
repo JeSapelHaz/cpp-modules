@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:58 by hbutt             #+#    #+#              #
-#    Updated: 2025/06/03 15:34:27 by hbutt            ###   ########.fr        #
+#    Updated: 2025/06/04 13:25:44 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RM                  = rm -rf
 # Source files
 SRCS				= main.cpp \
 						Contact.cpp \
-						Phonebook.cpp 
+						PhoneBook.cpp 
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)

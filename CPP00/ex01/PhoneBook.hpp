@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:18:36 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/03 15:30:40 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/04 13:24:16 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "Contact.hpp"
 
-class Phonebook
+class PhoneBook
 {
 
 private:
@@ -25,7 +25,7 @@ private:
 
 public:
     Contact _contacts[8];
-    Phonebook() : _nbrContacts(0) {}
+    PhoneBook() : _nbrContacts(0) {}
     int getNbrContacts(void);
     void addContact(void);
     void getContact(void);

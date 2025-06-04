@@ -6,19 +6,19 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:23:26 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/03 15:30:59 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/04 13:25:31 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
 #include <stdlib.h>
 
 int main(void)
 {
-    Phonebook phonebook;
+    PhoneBook PhoneBook;
     
     std::string line;
     
@@ -33,12 +33,12 @@ int main(void)
         }
         if (line.compare("ADD") == 0)
         {
-            phonebook.addContact();
+            PhoneBook.addContact();
             continue;
         }
         else if (line.compare("SEARCH") == 0)
         {
-            phonebook.getContact();
+            PhoneBook.getContact();
             continue;
         }
         else if (line.compare("EXIT") == 0)

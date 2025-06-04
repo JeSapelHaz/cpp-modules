@@ -6,15 +6,15 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:08:52 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/03 15:30:44 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/04 13:24:05 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <iomanip>
 #include <stdlib.h>
 
-void Phonebook::addContact(void)
+void PhoneBook::addContact(void)
 {
     std::string array[5];
     
@@ -84,7 +84,7 @@ void Phonebook::addContact(void)
     this->_contacts[_nbrContacts % 8].setSecret(array[4]);
     this->_nbrContacts++;
 }
-void Phonebook::getContact(void)
+void PhoneBook::getContact(void)
 {
     int i = 0;
     std::string line;
@@ -141,17 +141,17 @@ void Phonebook::getContact(void)
     index = atoi(line.c_str());
     if (index > 0 && index <= this->_nbrContacts)
     {
-        std::cout << "First name : " << this->_contacts[i - 1].getFirstname() << std::endl;
-        std::cout << "Last name : " << this->_contacts[i - 1].getLastname() << std::endl;
-        std::cout << "Nickname : " << this->_contacts[i - 1].getNickname() << std::endl;
-        std::cout << "Phone number : " << this->_contacts[i - 1].getPhonenumber() << std::endl;
-        std::cout << "Secret : " << this->_contacts[i - 1].getSecret() << std::endl;
+        std::cout << "First name : " << this->_contacts[index - 1].getFirstname() << std::endl;
+        std::cout << "Last name : " << this->_contacts[index - 1].getLastname() << std::endl;
+        std::cout << "Nickname : " << this->_contacts[index - 1].getNickname() << std::endl;
+        std::cout << "Phone number : " << this->_contacts[index - 1].getPhonenumber() << std::endl;
+        std::cout << "Secret : " << this->_contacts[index - 1].getSecret() << std::endl;
     }
     else 
         std::cout << "Invalid index" << std::endl;
 }
 
-int Phonebook::getNbrContacts(void)
+int PhoneBook::getNbrContacts(void)
 {
     return this->_nbrContacts;
 }
