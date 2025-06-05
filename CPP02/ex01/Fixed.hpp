@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 15:04:12 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/05 16:08:05 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/05 16:32:56 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ class Fixed
         int toInt(void) const;
 };
 
-std::ostream &operator<<(std::ostream &stream, Fixed const &obj);
+std::ostream &operator<<(std::ostream &out, Fixed const &obj);
 
 #endif
