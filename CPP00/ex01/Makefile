@@ -6,12 +6,12 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:58 by hbutt             #+#    #+#              #
-#    Updated: 2025/06/04 13:25:44 by hbutt            ###   ########.fr        #
+#    Updated: 2025/06/05 13:22:56 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME				= phonebook
+NAME				= PhoneBook
 
 # Compiler and CFlags
 CC                  = c++
