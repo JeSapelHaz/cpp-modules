@@ -6,9 +6,12 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 15:04:12 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/04 15:50:47 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/05 16:02:39 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 
@@ -27,3 +30,5 @@ class Fixed
         int getRawBits(void) const;
         void setRawBits(int const raw);
 };
+
+#endif
