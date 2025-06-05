@@ -6,14 +6,14 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:15:06 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/02 19:10:39 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/05 15:05:59 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
 
-void ft_upper(char *str)
+void ft_upper(std::string str)
 {
     int i = 0;
     while (str[i])

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:18:36 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/04 13:24:16 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/05 15:03:24 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class PhoneBook
 private:
     
     int     _nbrContacts;
+    Contact _contacts[8];
 
 public:
-    Contact _contacts[8];
     PhoneBook() : _nbrContacts(0) {}
     int getNbrContacts(void);
     void addContact(void);
