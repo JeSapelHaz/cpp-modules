@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 17:10:21 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/03 20:09:33 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/10 13:21:44 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int main()
         jim.attack();
         club.setType("some other type of club");
         jim.attack();
-
-
     }
     // ================================= SUJET
     // Weapon club = Weapon("crude spiked club");
