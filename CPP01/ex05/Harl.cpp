@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:07:13 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/04 14:54:21 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/10 16:20:14 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
+     if (atoi(level.c_str()) > 4 || atoi(level.c_str()) < 0)
+    {
+        std::cout << "Invalid." << std::endl;
+        return ;
+    }
     void (Harl::*harl_funct_ptr[4])();
 
     harl_funct_ptr[0] = &Harl::debug;
