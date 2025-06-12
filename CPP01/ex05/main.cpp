@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:48:42 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/10 16:20:44 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/12 15:37:44 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int main(void)
     Harl.complain("1");
     Harl.complain("2");
     Harl.complain("3");
+    Harl.complain("4");
 }
