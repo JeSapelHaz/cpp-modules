@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 16:24:09 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/03 16:50:06 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/13 13:20:05 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ int main(void)
     zombies[2].announce();
     zombies[3].announce();
     zombies[4].announce();
+    delete[] zombies;
+    
     return 0;
 }

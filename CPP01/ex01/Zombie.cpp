@@ -6,11 +6,13 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 16:29:32 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/10 16:19:44 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/13 13:20:30 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie(){}
 
 void Zombie::setName(std::string name)
 {
@@ -29,5 +31,5 @@ Zombie::~Zombie(void)
         
 void Zombie::announce(void)
 {
-     std::cout << "BraiiiiiiinnnzzzZ" << std::endl;
+     std::cout << _name << " : BraiiiiiiinnnzzzZ" << std::endl;
 }

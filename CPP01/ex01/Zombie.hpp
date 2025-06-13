@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 16:24:17 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/10 16:13:23 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/13 13:17:52 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Zombie
         std::string _name;
 
     public:
+        Zombie();
         Zombie(std::string name);
         ~Zombie(void);
         
