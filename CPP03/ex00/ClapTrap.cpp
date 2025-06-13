@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:47:03 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/12 16:10:25 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/13 13:14:34 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@ ClapTrap::ClapTrap(std::string name)
     _hit = 10;
     _energy = 10;
     _attack = 0;
-    std::cout << _name << " is created." << std::endl;
+    std::cout << "ClapTrap " << _name << " is created." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << _name << " is destroyed." << std::endl;
+    std::cout << "ClapTrap " << _name << " is destroyed." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
     *this  = other;
+    std::cout << "ClapTrap copy constructor." << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -37,8 +38,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
     {
         this->_name = other._name;
         this->_hit = other._hit;
+        this->_attack = other._energy;
         this->_energy = other._energy;
     }
+    std::cout << "ClapTrap copy assignment operator." << std::endl;
     return *this;
 }        
 
@@ -71,5 +74,4 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     else
         std::cout << _name << " has no enough energy." << std::endl;
-    
 }
