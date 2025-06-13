@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 16:14:39 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/13 13:14:58 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/13 13:55:41 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap " << _name << " is destroyed." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other._name)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
     *this  = other;
     std::cout << "ScavTrap copy constructor." << std::endl;
@@ -39,7 +39,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
         this->_name = other._name;
         this->_hit = other._hit;
         this->_energy = other._energy;
-        this->_attack = other._energy;
+        this->_attack = other._attack;
     }
     std::cout << "ScavTrap copy assignment operator." << std::endl;
     return *this;
@@ -55,26 +55,6 @@ void ScavTrap::attack(const std::string& target)
     else
         std::cout << _name << " has no enough energy." << std::endl;
 }
-
-// void ScavTrap::takeDamage(unsigned int amount)
-// {
-//     _hit = _hit - amount;
-//     if (_hit < 0)
-//         _hit = 0;
-//     std::cout << "ScavTrap " << _name << " takes " << amount << " points of damage. HP : " << _hit << std::endl;
-// }
-
-// void ScavTrap::beRepaired(unsigned int amount)
-// {
-//     if (_energy > 0)
-//     {
-//         _hit = _hit + amount;
-//         _energy--;
-//         std::cout << "ScavTrap " << _name << " repairs " << amount << " points of life. HP : " << _hit << std::endl;
-//     }
-//     else
-//         std::cout << "ScavTrap " << _name << " has no enough energy." << std::endl;
-// }
 
 void ScavTrap::guardGate()
 {
