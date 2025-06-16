@@ -6,14 +6,14 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/12 13:46:37 by hbutt             #+#    #+#              #
-#    Updated: 2025/06/16 16:35:46 by hbutt            ###   ########.fr        #
+#    Updated: 2025/06/16 16:44:59 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL := /bin/bash
 
 # Standard
-NAME				= ScavTrap
+NAME				= FragTrap
 
 # Compiler and CFlags
 CC                  = c++
