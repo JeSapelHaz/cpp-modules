@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 13:32:45 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/13 13:52:31 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/16 16:51:18 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
-    std::cout << "FragTrap copy constructor." << std::endl;
     *this = other;
+    std::cout << "FragTrap copy constructor." << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& other)
