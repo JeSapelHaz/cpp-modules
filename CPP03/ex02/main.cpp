@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:46:30 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/13 13:57:31 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/16 16:52:24 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int main()
     ft.beRepaired(15);
     ft.highFivesGuys();
 
-    std::cout << "=====================================\n";
-    FragTrap copy(ft);
+    // std::cout << "=====================================\n";
+    // FragTrap copy(ft);
 
-    std::cout << "=====================================\n";
-    FragTrap assigned("AnotherOne");
-    assigned = ft;
+    // std::cout << "=====================================\n";
+    // FragTrap assigned("AnotherOne");
+    // assigned = ft;
 
     std::cout << "=====================================\n";
     return 0;
