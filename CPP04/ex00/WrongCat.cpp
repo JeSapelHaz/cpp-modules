@@ -23,15 +23,15 @@ WrongCat::~WrongCat()
     std::cout << "A WrongCat is destroyed." << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
-    std::cout << "Copy constructor called." << std::endl;
-    *this = other;
+    std::cout << "Copy constructor of WrongCat called." << std::endl;
+    _type = other._type;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &other)
 {
-    std::cout << "Copy assignment constructor called." << std::endl;
+    std::cout << "Copy assignment constructor of WrongCat called." << std::endl;
     this->_type = other.getType();
     return *this;
 }
