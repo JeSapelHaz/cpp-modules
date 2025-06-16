@@ -6,9 +6,11 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 14:23:46 by hbutt             #+#    #+#              #
-#    Updated: 2025/06/13 14:24:04 by hbutt            ###   ########.fr        #
+#    Updated: 2025/06/16 18:16:05 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+SHELL := /bin/bash
 
 # Standard
 NAME				= Poly
@@ -19,7 +21,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp 
+SRCS				= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)
