@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:22:17 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/16 20:08:44 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/18 00:00:06 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Dog : public Animal
 
         std::string getType() const;
         void makeSound() const;
+
+        Brain* getBrain() const;
 };
 
 #endif

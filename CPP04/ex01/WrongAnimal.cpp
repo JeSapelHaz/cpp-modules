@@ -23,7 +23,7 @@ WrongAnimal::~WrongAnimal()
     std::cout <<  "A WrongAnimal is destroyed." << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other) : WrongAnimal(other)
+WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
     std::cout << "Copy constructor of WrongAnimal called." << std::endl;
     _type = other._type;
