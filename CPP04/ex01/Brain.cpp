@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 18:44:57 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/18 00:11:26 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/18 15:02:02 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,25 @@ Brain::~Brain()
 Brain::Brain(const Brain &other)
 {
     std::cout << "Copy constructor of Brain called." << std::endl;
-    for (int i = 0; i < _ideaCount ; i++)
+    _ideaCount = other._ideaCount;
+    for (int i = 0; i < _ideaCount; i++)
         _ideas[i] = other._ideas[i];
 }
 
 Brain& Brain::operator=(const Brain &other)
 {
     std::cout << "Copy assignment constructor of Brain called." << std::endl;
-    for (int i = 0; i < _ideaCount ; i++)
-        _ideas[i] = other._ideas[i];
+    if (this != &other)
+    {
+        _ideaCount = other._ideaCount;
+        for (int i = 0; i < _ideaCount; i++)
+            _ideas[i] = other._ideas[i];
+    }
     return *this;
 }
 
-void Brain::getIdeas()
+
+void Brain::getIdeas() const
 {
     for (int i = 0; i < _ideaCount ; i++)
         std::cout << "Idea " << i + 1 << " is " << _ideas[i] << std::endl;

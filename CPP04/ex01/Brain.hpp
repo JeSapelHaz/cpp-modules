@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 18:33:46 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/17 23:44:38 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/18 14:57:20 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Brain
         Brain(const Brain &other);
         Brain &operator=(const Brain &other);
 
-        void getIdeas();
+        void getIdeas() const;
         void setIdea(std::string idea);
 };
 
