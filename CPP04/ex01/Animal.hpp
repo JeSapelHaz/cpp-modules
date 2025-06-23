@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:33:39 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/17 23:59:02 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/23 14:03:39 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class Animal
 
         std::string getType() const;
         virtual void makeSound() const;
-
-        virtual Brain* getBrain() const = 0;
 };
 
 #endif

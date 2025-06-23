@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:42:36 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/23 12:19:26 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/23 14:11:24 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 int main()
 {
+    // Animal *animal1 = new Animal();
+    // animal1->makeSound();
     Animal* animals[NBR_ANIMALS];
     for (int i = 0; i < NBR_ANIMALS; i++)
     {
@@ -34,7 +36,10 @@ int main()
     dog1->getBrain()->setIdea("Idea B");
     std::cout << "=========================================" << std::endl;
     Dog* dog2 = new Dog(*dog1);
-    
+    std::cout << "Dog1 ideas:" << std::endl;
+    dog1->getBrain()->getIdeas();
+    std::cout << "Dog2 ideas:" << std::endl;
+    dog2->getBrain()->getIdeas();
     dog1->getBrain()->setIdea("Idea C");
     std::cout << "=========================================" << std::endl;
     std::cout << "Dog1 ideas:" << std::endl;
