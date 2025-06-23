@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:42:36 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/18 16:16:08 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/23 12:19:26 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,24 @@ int main()
         else
             animals[i] = new Cat();
     }
-
+    std::cout << "=========================================" << std::endl;
     Dog* dog1 = new Dog();
     dog1->getBrain()->setIdea("Idea A");
     dog1->getBrain()->setIdea("Idea B");
-
+    std::cout << "=========================================" << std::endl;
     Dog* dog2 = new Dog(*dog1);
-
+    
     dog1->getBrain()->setIdea("Idea C");
-
+    std::cout << "=========================================" << std::endl;
     std::cout << "Dog1 ideas:" << std::endl;
     dog1->getBrain()->getIdeas();
-
+    std::cout << "=========================================" << std::endl;
     std::cout << "Dog2 ideas (doit être inchangé):" << std::endl;
     dog2->getBrain()->getIdeas();
-
+    std::cout << "=========================================" << std::endl;
     delete dog1;
     delete dog2;
+    std::cout << "=========================================" << std::endl;
 
     for (int i = 0; i < NBR_ANIMALS; i++)
         delete animals[i];

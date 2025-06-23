@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 18:44:57 by hbutt             #+#    #+#             */
-/*   Updated: 2025/06/18 15:02:02 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/06/23 12:19:58 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,6 @@ void Brain::setIdea(std::string idea)
     }
     _ideas[_ideaCount] = idea;
     _ideaCount++;
+    std::cout << "A new idea is set.\n";
+
 }
