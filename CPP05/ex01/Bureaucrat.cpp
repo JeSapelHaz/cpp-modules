@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:21:15 by hbutt             #+#    #+#             */
-/*   Updated: 2025/07/09 15:59:48 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/07/16 20:23:31 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ void Bureaucrat::decrement()
     if (_grade == 150)
         throw GradeTooLowException();
     _grade++;
+}
+
+void Bureaucrat::signForm()
+{
+    
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
