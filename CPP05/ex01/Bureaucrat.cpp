@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
+/*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:21:15 by hbutt             #+#    #+#             */
-/*   Updated: 2025/07/16 20:23:31 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:41:08 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("James"), _grade(150)
 {
@@ -72,9 +73,9 @@ void Bureaucrat::decrement()
     _grade++;
 }
 
-void Bureaucrat::signForm()
+void Bureaucrat::signForm(Form &f)
 {
-    
+    f.beSigned(*this);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
+/*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 12:57:45 by hbutt             #+#    #+#             */
-/*   Updated: 2025/07/16 21:09:38 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:45:36 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form(std::string name, int gradeToSign, int gradeToExe) : _name(name), _gr
 {
     if (gradeToSign < 1 || gradeToExe < 1)
         throw GradeTooHighException();
-    else if (grade > 150 || gradeToExe > 150)
+    else if (gradeToExe > 150 || gradeToExe > 150)
         throw GradeTooLowException();
     _signed = false;
     std::cout << "Constructor of Form called." << std::endl;
@@ -69,12 +69,18 @@ int Form::getGradeToExe()
 
 void Form::beSigned(Bureaucrat &b)
 {
-    if (b->_signed == true)
+    if (_signed == true)
         std::cout << "Already signed !" << std::endl;
-    if (_gradeToSign > b->_grade)
-        b->_signed = true;
+    if (_gradeToSign >= (const int) b.getGrade())
+    {
+        _signed = true;
+        std::cout << b.getName() << " signed " << this->getName() << "\n";
+    }
     else 
+    {
+        std::cout << b.getName() << " couldn't sign " << this->getName() << " because ";
         throw Form::GradeTooLowException();
+    }
 }
 
 const char *Form::GradeTooHighException::what() const throw()

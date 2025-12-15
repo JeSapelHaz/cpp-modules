@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
+#    By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/23 14:15:24 by hbutt             #+#    #+#              #
-#    Updated: 2025/07/09 15:18:37 by hbutt            ###   ########.fr        #
+#    Updated: 2025/12/15 16:30:00 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp Bureaucrat.cpp 
+SRCS				= main.cpp Bureaucrat.cpp Form.cpp
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)

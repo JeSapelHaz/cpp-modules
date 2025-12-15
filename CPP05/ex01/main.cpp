@@ -3,49 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
+/*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:20:25 by hbutt             #+#    #+#             */
-/*   Updated: 2025/07/09 16:01:01 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:49:52 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
     Bureaucrat Hulk("Hulk", 1);
     Bureaucrat IronMan("IronMan", 150);
+    Form f1("form1", 1, 1);
     std::cout << "------------------------------------\n";
     try
     {
-        Bureaucrat("CaptainAmerica", 0);
+        Form f2("form2", 0, 150);
     }
     catch(const std::exception& e)
     {
-        std::cout << "Cannot create CaptainAmerica\n";
-        std::cout << e.what() << '\n';
-    }
-    std::cout << "------------------------------------\n";
-    std::cout << Hulk << std::endl;
-    std::cout << IronMan << std::endl;
-    std::cout << "------------------------------------\n";
-    try
-    {
-        Hulk.increment();
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what() << '\n';
+        std::cerr << e.what() << '\n';
     }
     std::cout << "------------------------------------\n";
     try
     {
-        IronMan.decrement(); 
+        f1.beSigned(IronMan);
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << '\n';
+        std::cerr << e.what() << '\n';
     }
     std::cout << "------------------------------------\n";
+    try
+    {
+        f1.beSigned(Hulk);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
