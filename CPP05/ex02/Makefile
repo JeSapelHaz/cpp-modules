@@ -21,7 +21,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp ShrubberyCreationForm.cpp Bureaucrat.cpp AForm.cpp 
+SRCS				= main.cpp ShrubberyCreationForm.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)

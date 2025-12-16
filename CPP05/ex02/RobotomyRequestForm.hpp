@@ -11,3 +11,24 @@
 /* ************************************************************************** */
 
 #pragma once
+
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
+
+class RobotomyRequestForm : public AForm
+{
+    private:
+        std::string _target;
+
+    public:
+        RobotomyRequestForm();
+        RobotomyRequestForm(std::string _target);
+        ~RobotomyRequestForm();
+        RobotomyRequestForm(RobotomyRequestForm &other);
+        RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+
+        std::string getTarget() const;
+        void execute(Bureaucrat const & executor) const;
+};
