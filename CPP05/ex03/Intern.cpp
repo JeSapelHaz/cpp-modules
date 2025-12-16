@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:30:30 by hbutt             #+#    #+#             */
-/*   Updated: 2025/12/16 16:40:57 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:37:39 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ AForm *Intern::makeForm(std::string nameForm, std::string targetForm)
     else if (nameForm.compare("ShrubberyCreationForm") == 0)
         form = new ShrubberyCreationForm(targetForm);
     else 
-        throw InvalidNameException();
+        throw InvalidFormNameException();
     return form;
 }

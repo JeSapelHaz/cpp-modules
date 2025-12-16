@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:19:17 by hbutt             #+#    #+#             */
-/*   Updated: 2025/12/16 16:34:06 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/12/16 17:37:34 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,9 @@ class Intern
         Intern &operator=(const Intern &other);
 
         AForm *makeForm(std::string nameForm, std::string targetForm);
+        
+        class InvalidFormNameException : public std::exception
+        {
+            const char *what() const throw();
+        };
 };
