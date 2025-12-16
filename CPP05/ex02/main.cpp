@@ -12,16 +12,26 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
     Bureaucrat Hulk("Hulk", 1);
     Bureaucrat IronMan("IronMan", 150);
-    AForm f1("form1", 1, 1);
+    ShrubberyCreationForm shrubbery("shrubbery");
     std::cout << "------------------------------------\n";
+    // try
+    // {
+    //     AForm f2("form2", 0, 150);
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    // std::cout << "------------------------------------\n";
     try
     {
-        AForm f2("form2", 0, 150);
+        Hulk.executeForm(shrubbery);
     }
     catch(const std::exception& e)
     {
@@ -30,7 +40,7 @@ int main()
     std::cout << "------------------------------------\n";
     try
     {
-        f1.beSigned(IronMan);
+        shrubbery.beSigned(IronMan);
     }
     catch(const std::exception& e)
     {
@@ -39,10 +49,21 @@ int main()
     std::cout << "------------------------------------\n";
     try
     {
-        f1.beSigned(Hulk);
+        shrubbery.beSigned(Hulk);
+        Hulk.executeForm(shrubbery);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << "------------------------------------\n";
+    try
+    {
+        IronMan.executeForm(shrubbery);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << "------------------------------------\n";
 }

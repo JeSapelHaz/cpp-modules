@@ -54,7 +54,7 @@ std::string Bureaucrat::getName() const
 }
 
 
-unsigned int Bureaucrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
     return _grade;
 }
@@ -93,3 +93,9 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &obj)
     out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return out;
 }
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    form.execute(*this);
+    std::cout << this->getName() << " executed " << form.getName() << std::endl;
+}   

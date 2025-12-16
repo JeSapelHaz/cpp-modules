@@ -31,7 +31,7 @@ class Bureaucrat
         Bureaucrat &operator=(const Bureaucrat &other);
 
         std::string getName() const;
-        unsigned int getGrade() const;
+        int getGrade() const; // ← change unsigned int en int
         void increment();
         void decrement();
 
@@ -46,6 +46,8 @@ class Bureaucrat
         {
             const char *what() const throw();
         };
+
+        void executeForm(AForm const & form) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat &obj);

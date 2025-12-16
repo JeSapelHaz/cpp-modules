@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fstream>
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default")
@@ -19,7 +20,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-    std::cout << " Constructor of ShrubberyCreationForm for target called." << std::endl;
+    std::cout << "Constructor of ShrubberyCreationForm for target called." << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -48,6 +49,59 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (executor.getGrade() >= this->getGradeToExe() && )
-        
+    if (!this->isSigned()) 
+    {
+        std::cout << executor.getName() << " couldn't execute " << this->getName() << " because ";
+        throw AForm::FormNotSignedException();
+    }
+    if (executor.getGrade() > this->getGradeToExe()) 
+    {   
+        std::cout << executor.getName() << " couldn't execute " << this->getName() << " because ";
+        throw AForm::GradeTooLowException();
+    }
+    std::string filename = this->getTarget() + "_shrubbery";
+    std::ofstream ofs(filename.c_str()); 
+    if (!ofs)
+    {
+        std::cerr << "Error: cannot create file\n";
+        return;
+    }
+    ofs << "\n" << 
+"              _{\\ _{\\{\\/}/}/}__\n"  <<
+"            {/{/\\}{/{/\\}(\\}{/\\} _\n" <<
+"           {/{/\\}{/{/\\}(_)\\}{/{/\\}  _\n" <<
+"        {\\{/(\\}\\}{/{/\\}\\}{/){/\\}\\} /\\\n}" <<
+"       {/{/(_)/}{\\{/)\\}{\\(_){/}/}/}/}\n" <<
+"      _{\\{/{/{\\{/{/(_)/}/}/}{\\(/}/}/}\n" <<
+"     {/{/{\\{\\{\\(/}{\\{\\/}/}{\\}(_){\\/}\\}\n" <<
+"     _{\\{/{\\{/(_)\\}/}{/{/{/\\}\\})\\}{/\\}\n" <<
+"    {/{/{\\{\\(/}{/{\\{\\{\\/})/}{\\(_)/}/}\\}\n" <<
+"     {\\{\\/}(_){\\{\\{\\/}/}(_){\\/}{\\/}/})/}\n" <<
+"      {/{\\{\\/}{/{\\{\\{\\/}/}{\\{\\/}/}\\}(_)\n" <<
+"     {/{\\{\\/}{/){\\{\\{\\/}/}{\\{\\(/}/}\\}/}\n" <<
+"      {/{\\{\\/}(_){\\{\\{\\(/}/}{\\(_)/}/}\\}\n" <<
+"        {/({/{\\{/{\\{\\/}(_){\\/}/}\\}/}(\\}\n" <<
+"         (_){/{\\/}{\\{\\/}/}{\\{\\)/}/}(_)\n" <<
+"           {/{/{\\{\\/}{/{\\{\\{\\(_)/}\n" <<
+"            {/{\\{\\{\\/}/}{\\{\\\\}/}\n" <<
+"             {){/ {\\/}{\\/} \\}\\}\n" <<
+"             (_)  \\.-\'.-/\n" <<
+"         __...--- |\'-.-\'| --...__\n" <<
+"  _...--\"   .-\'   |\'-.-\'|  \' -.  \"\"--..__\n" <<
+"-\"    \' .  . \'    |.\'-._| \'  . .  \'   \n" <<
+".  \'-  \'    .--\'  | \'-.\'|    .  \'  . \'\n" <<
+"         \' ..     |\'-_.-|\n" <<
+" .  \'  .       _.-|-._ -|-._  .  \'  .\n" <<
+"             .\'   |\'- .-|   \'.\n" <<
+" ..-\'   \' .  \'.   `-._.-´   .\'  \'  - .\n" <<
+"  .-\' \'        \'-._______.-\'     \'  .\n" <<
+"       .      ~,\n" <<
+"   .       .   |\\   .    \' \'-.\n" <<
+"   ___________/  \\____________\n" <<
+"  /  Why is it, when you want \\\n" <<
+" |  something, it is so damn   |\n" <<
+" |    much work to get it?     |\n" <<
+"  \\___________________________/\n";
+
+    ofs.close();
 }

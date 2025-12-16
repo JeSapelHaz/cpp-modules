@@ -21,7 +21,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp Bureaucrat.cpp Form.cpp
+SRCS				= main.cpp ShrubberyCreationForm.cpp Bureaucrat.cpp AForm.cpp 
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)
@@ -50,4 +50,4 @@ fclean: clean
 
 re: fclean obj all
 
-.PHONY: all obj clean fclean re 
+.PHONY: all obj clean fclean re

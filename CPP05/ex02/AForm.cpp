@@ -47,17 +47,17 @@ AForm &AForm::operator=(const AForm &other)
     return *this;
 }
 
-std::string AForm::getName()
+std::string AForm::getName() const
 {
     return _name;
 }
 
-bool AForm::isSigned()
+bool AForm::isSigned() const
 {
     return _signed;
 }
 
-int AForm::getGradeToSign()
+int AForm::getGradeToSign() const
 {
     return _gradeToSign;
 }
@@ -71,7 +71,7 @@ void AForm::beSigned(Bureaucrat &b)
 {
     if (_signed == true)
         std::cout << "Already signed !" << std::endl;
-    if (_gradeToSign >= (const int) b.getGrade())
+    if (_gradeToSign >= b.getGrade())
     {
         _signed = true;
         std::cout << b.getName() << " signed " << this->getName() << "\n";
@@ -85,12 +85,17 @@ void AForm::beSigned(Bureaucrat &b)
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-    return ("The grade is too high !");
+    return "Grade is too high";
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-    return ("The grade is too low !");
+    return "Grade is too low";
+}
+
+const char *AForm::FormNotSignedException::what() const throw()
+{
+    return "Form is not signed";
 }
 
 
