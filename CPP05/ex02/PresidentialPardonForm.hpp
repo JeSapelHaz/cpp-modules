@@ -11,3 +11,25 @@
 /* ************************************************************************** */
 
 #pragma once
+
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
+
+class PresidentialPardonForm : public AForm
+{
+    private:
+        std::string _target;
+
+    public:
+        PresidentialPardonForm();
+        PresidentialPardonForm(std::string _target);
+        ~PresidentialPardonForm();
+        PresidentialPardonForm(PresidentialPardonForm &other);
+        PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+
+        std::string getTarget() const;
+        void execute(Bureaucrat const & executor) const;
+};
+

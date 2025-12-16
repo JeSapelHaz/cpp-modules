@@ -14,6 +14,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -21,6 +22,7 @@ int main()
     Bureaucrat IronMan("IronMan", 150);
     ShrubberyCreationForm shrubbery("shrubbery");
     RobotomyRequestForm robotomized("robotomized");
+    PresidentialPardonForm presidential("presidential");
     std::cout << "------------------------------------\n";
     // try
     // {
@@ -33,7 +35,7 @@ int main()
     // std::cout << "------------------------------------\n";
     try
     {
-        Hulk.executeForm(robotomized);
+        Hulk.executeForm(presidential);
     }
     catch(const std::exception& e)
     {
@@ -42,7 +44,7 @@ int main()
     std::cout << "------------------------------------\n";
     try
     {
-        robotomized.beSigned(IronMan);
+        presidential.beSigned(IronMan);
     }
     catch(const std::exception& e)
     {
@@ -51,8 +53,8 @@ int main()
     std::cout << "------------------------------------\n";
     try
     {
-        robotomized.beSigned(Hulk);
-        Hulk.executeForm(robotomized);
+        presidential.beSigned(Hulk);
+        Hulk.executeForm(presidential);
     }
     catch(const std::exception& e)
     {
@@ -61,7 +63,7 @@ int main()
     std::cout << "------------------------------------\n";
     try
     {
-        IronMan.executeForm(robotomized);
+        IronMan.executeForm(presidential);
     }
     catch(const std::exception& e)
     {
