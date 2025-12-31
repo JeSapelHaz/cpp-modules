@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:25:12 by hbutt             #+#    #+#             */
-/*   Updated: 2025/12/17 14:55:19 by hbutt            ###   ########.fr       */
+/*   Updated: 2025/12/31 13:52:17 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <climits>
+#include <cstdlib>
 
 class ScalarConverter
 {
