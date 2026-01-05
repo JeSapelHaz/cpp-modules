@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:35:33 by hbutt             #+#    #+#             */
-/*   Updated: 2025/12/31 14:05:21 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/05 18:40:39 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,27 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &src) { (void)
 
 static void charConverter(std::string str)
 {
-    std::cout << "char : " << str[0] << std::endl;
-    std::cout << "int : " << static_cast<int>(str[0]) << std::endl;
-    std::cout << "float : " << std::fixed << std::setprecision(1) << static_cast<float>(str[0]) << std::endl;
-    std::cout << "double : " << std::fixed << std::setprecision(1) << static_cast<double>(str[0]) << std::endl;
+    char c = str[0];
+    std::cout << "char: '" << c << "'" << std::endl;
+    std::cout << "int: " << static_cast<int>(c) << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;
 }
 
 static void floatConverter(std::string str)
 {
-    if (atoi(str.c_str()) < 0 || atoi(str.c_str()) > 127)
-        std::cout << "char : impossible" << std::endl;
-    else if (atoi(str.c_str()) < 32 || atoi(str.c_str()) == 127)
-        std::cout << "char : non-displayable" << std::endl;
+    float value = atof(str.c_str());
+    
+    if (value < 0 || value > 127)
+        std::cout << "char: impossible" << std::endl;
+    else if (value < 32 || value == 127)
+        std::cout << "char: Non displayable" << std::endl;
     else
-        std::cout << "char : " << static_cast<char>(atof(str.c_str())) << std::endl;
-    std::cout << "int : " <<  static_cast<int>(atof(str.c_str())) << std::endl;
-    std::cout << "float : " << std::fixed << std::setprecision(1) << atof(str.c_str()) << "f" <<std::endl;
-    std::cout << "double : " <<  std::fixed << std::setprecision(1) << static_cast<double>(atof(str.c_str())) << std::endl;
+        std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+    
+    std::cout << "int: " << static_cast<int>(value) << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << value << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 }
 
 static void doubleConverter(std::string str)
@@ -99,24 +103,19 @@ static void errorMessage()
 
 void ScalarConverter::convert(std::string str)
 {
-    if (std::isprint(str[0]) && !std::isdigit(str[0]))
-    {
-        if (str.length() == 1)
-            charConverter(str);
-        else if (str == "-inf" || str == "-inff")
-            minInfConverter();
-        else if (str == "+inf" || str == "+inff")
-            maxInfConverter();
-        else if (str == "nan" || str == "nanf")
-            nan();
-        else
-            errorMessage();
-    }
+    if (str == "-inf" || str == "-inff")
+        minInfConverter();
+    else if (str == "+inf" || str == "+inff" || str == "inf" || str == "inff")
+        maxInfConverter();
+    else if (str == "nan" || str == "nanf")
+        nan();
+    else if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
+        charConverter(str);
     else if (str[str.length() - 1] == 'f')
         floatConverter(str);
     else if (str.find('.') != std::string::npos)
         doubleConverter(str);
-    else if (std::isdigit(str[0]))
+    else if (std::isdigit(str[0]) || (str[0] == '-' && str.length() > 1))
         intConverter(str);
     else
         errorMessage();
