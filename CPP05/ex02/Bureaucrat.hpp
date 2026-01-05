@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:21:05 by hbutt             #+#    #+#             */
-/*   Updated: 2025/12/15 16:54:47 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/05 16:31:01 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat
         Bureaucrat &operator=(const Bureaucrat &other);
 
         std::string getName() const;
-        int getGrade() const; // ← change unsigned int en int
+        int getGrade() const;
         void increment();
         void decrement();
 

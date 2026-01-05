@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:21:15 by hbutt             #+#    #+#             */
-/*   Updated: 2025/12/15 16:41:08 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/05 16:28:13 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
 {
     std::cout << "Copy constructor of Bureaucrat called.\n";
-    *this = other;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -88,7 +87,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return ("The grade is lower than the minimum");
 }
 
-std::ostream &operator<<(std::ostream &out, Bureaucrat &obj)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &obj)
 {
     out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return out;
