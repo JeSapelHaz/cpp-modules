@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:50:14 by hbutt             #+#    #+#             */
-/*   Updated: 2026/01/06 18:16:19 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/06 18:32:45 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ template<typename T>
 Array<T>::Array(unsigned int n) : _size(n)
 {
     _elements = new T[n];
+    for (int i = 0; i < s; i++)
+        _elements[i] = 0;
 }
 
 template<typename T>
@@ -53,9 +55,7 @@ Array<T>::~Array()
 template<typename T>
 Array<T>::Array(const Array<T> &other) : _size(other._size)
 {
-    _elements = new T[_size];
-    for (unsigned int i = 0; i < _size; i++)
-        _elements[i] = other._elements[i];
+    *this = other;
 }
 
 template<typename T>
