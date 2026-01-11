@@ -21,7 +21,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp
+SRCS				= main.cpp Span.cpp
 
 # File paths
 OBJ					= $(SRCS:.cpp=.o)
