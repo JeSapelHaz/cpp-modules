@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:41:00 by hbutt             #+#    #+#             */
-/*   Updated: 2026/01/11 17:42:40 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/11 17:45:04 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Span
         Span &operator=(const Span &other);
 
         void addNumber(unsigned int n);
+        void addMultNumbers(unsigned int n);
         unsigned int shortestSpan();
         unsigned int longestSpan();
     

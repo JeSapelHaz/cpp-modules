@@ -6,13 +6,15 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:49:25 by hbutt             #+#    #+#             */
-/*   Updated: 2026/01/11 17:43:39 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/11 17:45:09 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <algorithm>
 #include <climits>
+#include <cstdlib>
+#include <iostream>
 
 
 
@@ -43,6 +45,19 @@ void Span::addNumber(unsigned int n)
         throw Span::maxIntegersException();
     _array.push_back(n);
     _size++;
+}
+
+void Span::addMultNumbers(unsigned int n)
+{
+    if (this->_size + n > this->_maxIntegers)
+        throw Span::maxIntegersException();
+    unsigned int nb = 0;
+    for (unsigned int i = 0; i < n; i++)
+    {
+        nb = rand() % 100 + 1;
+        Span::addNumber(nb);
+        std::cout << "added " << nb << std::endl;
+    }
 }
 
 unsigned int Span::shortestSpan()
