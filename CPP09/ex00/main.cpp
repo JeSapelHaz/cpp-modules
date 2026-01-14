@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 18:49:33 by hbutt             #+#    #+#             */
-/*   Updated: 2026/01/12 21:29:07 by hbutt            ###   ########.fr       */
+/*   Updated: 2026/01/14 20:51:53 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string>
 #include <cstring>
 #include "Checks.hpp"
+#include "BitcoinExchange.hpp"
 
 void checkArgs(int ac, char **av)
 {
@@ -35,17 +36,7 @@ int main(int ac, char **av)
         std::ifstream file(av[1]);
         if (!file)
             throw std::runtime_error("error : could not open the file");
-        std::string line;
-        getline(file,line);
-        if (line.empty())
-            throw EmptyFileException();
-        else if (line != "date | value")
-            throw NotValidLineException();
-        
-        while(getline(file, line))
-        {
-            if (line.substr())
-        }
+        BitcoinExchange btc(av);
     }
     catch (const std::exception &e)
     {

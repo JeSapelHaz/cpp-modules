@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.42belgium.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/31 14:55:00 by hbutt             #+#    #+#              #
-#    Updated: 2026/01/11 18:49:28 by hbutt            ###   ########.fr        #
+#    Updated: 2026/01/14 20:45:17 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp
+SRCS				= main.cpp BitcoinExchange.cpp
 
 # File paths
 OBJ					= $(SRCS:.cpp=.o)
